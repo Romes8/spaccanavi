@@ -48,3 +48,5 @@ func _on_Stats_no_health() -> void:
 	
 	death_effect.set_as_toplevel(true)
 	get_parent().add_child(death_effect)
+	
+	print(" -- enemy dead in enemy class -- ")

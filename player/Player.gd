@@ -34,13 +34,19 @@ var ability_type: PackedScene
 
 signal shake_camera
 
+#custom code
+var start_time
+var end_time
+var elapsed_time
 
 func _ready() -> void:
+	print("---------- GAME STARTS ----------")
+	start_time = OS.get_ticks_msec()
+	
 	PlayerStats.max_health = health
 	PlayerStats.health = health
 	PlayerStats.connect("no_health", self, "death")
 	PlayerStats.has_pickup = false
-
 	gun.bullet_group = "player"
 
 func _process(delta):
@@ -94,6 +100,15 @@ func death() -> void:
 	
 	death_effect.set_as_toplevel(true)
 	get_parent().add_child(death_effect)
+	
+	print("---------- PLEAYER DIED ---------- ")
+	end_time = OS.get_ticks_msec()
+	elapsed_time = (end_time - start_time) / 1000
+	
+	var minutes = elapsed_time / 60
+	var seconds = elapsed_time % 60
+	
+	print("Play time: "  + str(minutes)+ ":" + str(seconds))
 
 func is_picked(Ability) -> void:
 	PlayerStats.has_pickup = true

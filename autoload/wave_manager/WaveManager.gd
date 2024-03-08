@@ -31,7 +31,7 @@ func next_wave() -> void:
 	wave_bar = 0
 	max_wave_bar *= _wave_multiplier
 	emit_signal("wave_completed", max_wave_bar)
-	
+	print("----------  NEXT WAVE ---------- ")
 	# 3. end wave reward: player health refill
 	PlayerStats.max_health *= 1.1
 	PlayerStats.health = PlayerStats.max_health

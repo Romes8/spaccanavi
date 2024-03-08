@@ -20,3 +20,4 @@ func _on_Enemy_body_entered(body: Node) -> void:
 	
 	if body is Player:
 		stats.health = 0
+		print("--- Chaser died ---")
