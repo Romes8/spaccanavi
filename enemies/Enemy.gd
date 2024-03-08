@@ -5,6 +5,9 @@ signal enemy_death
 
 export (float) var speed = 0.0
 export (int) var wave_points = 0
+export (String) var enemy_type = "DefaultEnemy"
+export (int) var enemy_score_points = 0
+
 
 const effect_path: String = Preload.EFFECT.DEATH
 const DeathEffect := preload(effect_path)
@@ -39,6 +42,7 @@ func _on_Enemy_body_entered(body: Node) -> void:
 func _on_Stats_no_health() -> void: 
 	if _is_hit_by_player:
 		emit_signal("enemy_death", wave_points)
+		
 	queue_free()
 	var death_effect: CPUParticles2D = DeathEffect.instance()
 	death_effect.connect("effect_finished", death_effect, "queue_free")
@@ -49,4 +53,8 @@ func _on_Stats_no_health() -> void:
 	death_effect.set_as_toplevel(true)
 	get_parent().add_child(death_effect)
 	
-	print(" -- enemy dead in enemy class -- ")
+	#print("--- ENEMY DIED: " + str(enemy_type) + " ---")
+	Config.kills += 1
+	Config.score_kills += enemy_score_points
+	#print("--- Kill score: " + str(Config.score_kills) + " , " + str(Config.kills) + " ---")
+	

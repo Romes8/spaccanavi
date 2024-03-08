@@ -8,6 +8,10 @@ func _ready() -> void:
 	gun1.bullet_group = "enemy"
 	gun2.bullet_group = "enemy"
 
+	enemy_type = "Hexagon"
+	enemy_score_points = 25
+
+
 func _physics_process(delta: float) -> void:
 	if get_tree().root.get_node("World/Player").has_node("Default"):
 		chase_player()

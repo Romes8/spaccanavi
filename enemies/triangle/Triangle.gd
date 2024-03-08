@@ -13,6 +13,10 @@ func _ready() -> void:
 	gun2.bullet_group = "enemy"
 	gun3.bullet_group = "enemy"
 	
+	enemy_type = "Triangle"
+	enemy_score_points = 35
+
+	
 	guns = [
 		{
 			gun = gun1,

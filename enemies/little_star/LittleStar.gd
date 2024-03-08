@@ -14,6 +14,10 @@ func _ready() -> void:
 	gun2.bullet_group = "enemy"
 	gun3.bullet_group = "enemy"
 	gun4.bullet_group = "enemy"
+	
+	enemy_type = "LittleStar"
+	enemy_score_points = 25
+
 
 func _physics_process(delta: float) -> void:
 	if get_tree().root.get_node("World/Player").has_node("Default"):

@@ -8,7 +8,11 @@ var spread_counter := 0
 	
 	
 func _ready() -> void:
-	gun.bullet_group = "enemy"
+	 gun.bullet_group = "enemy"
+
+	 enemy_type = "AggresiveChaser"
+	 enemy_score_points = 15
+
 	
 func _physics_process(delta):
 	if get_tree().root.get_node("World/Player").has_node("Default"):

@@ -41,9 +41,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[node name="Player" type="RigidBody2D" groups=[
-"player",
-]]
+[node name="Player" type="RigidBody2D" groups=["player"]]
 collision_mask = 4
 mass = 10.0
 physics_material_override = SubResource( 1 )
@@ -76,4 +74,5 @@ anims/Start = SubResource( 3 )
 anims/Stop = SubResource( 4 )
 
 [node name="AbilityTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]

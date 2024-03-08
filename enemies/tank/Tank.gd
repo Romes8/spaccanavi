@@ -9,6 +9,9 @@ onready var raycast: RayCast2D = $RayCast2D
 
 func _ready() -> void:
 	gun.bullet_group = "enemy"
+	enemy_type = "Tank"
+	enemy_score_points = 50
+
 	
 func _physics_process(delta: float) -> void:
 	if get_tree().root.get_node("World/Player").has_node("Default"):

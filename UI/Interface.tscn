@@ -54,6 +54,10 @@ margin_top = 48.0
 margin_right = 880.0
 margin_bottom = 114.0
 
+[node name="Label" parent="GameUI/WaveHandler" index="0"]
+margin_left = 142.0
+margin_right = 258.0
+
 [node name="HBoxContainer" type="HBoxContainer" parent="GameUI"]
 margin_left = 375.0
 margin_top = 662.0
@@ -172,6 +176,7 @@ visible = false
 margin_top = 136.0
 margin_right = 296.0
 margin_bottom = 200.0
+
 [connection signal="button_up" from="PauseOverlay/Options/RetryBtn" to="PauseOverlay/Options/RetryBtn" method="_on_button_up"]
 
 [editable path="GameUI/WaveHandler"]

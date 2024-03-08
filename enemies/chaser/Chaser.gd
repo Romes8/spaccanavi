@@ -1,6 +1,10 @@
 extends Enemy
 
-	
+func _ready():
+	# You can also set the enemy_type here if you prefer
+	 enemy_type = "Chaser"
+	 enemy_score_points = 10
+
 func _physics_process(delta):
 	if get_tree().root.get_node("World/Player").has_node("Default"):
 		chase_player()
@@ -20,4 +24,3 @@ func _on_Enemy_body_entered(body: Node) -> void:
 	
 	if body is Player:
 		stats.health = 0
-		print("--- Chaser died ---")

@@ -38,11 +38,13 @@ signal shake_camera
 var start_time
 var end_time
 var elapsed_time
+var run_time
+var second_passed = 1
 
 func _ready() -> void:
 	print("---------- GAME STARTS ----------")
 	start_time = OS.get_ticks_msec()
-	
+	run_time = OS.get_ticks_msec()
 	PlayerStats.max_health = health
 	PlayerStats.health = health
 	PlayerStats.connect("no_health", self, "death")
@@ -51,6 +53,14 @@ func _ready() -> void:
 
 func _process(delta):
 	input_vector = get_input()
+	
+	var current_time = OS.get_ticks_msec()
+	var elapsed_time = current_time - run_time
+	
+	if elapsed_time >= 1000:  # Check if 1000 milliseconds (1 second) have passed
+		var seconds_elapsed = int(elapsed_time / 1000)  # Calculate the number of full seconds elapsed
+		Config.score_time += 5 * seconds_elapsed  # Add 5 for each elapsed second
+		run_time = current_time - (elapsed_time % 1000)  # Reset the last_time, keeping the remainder
 
 func _physics_process(delta):
 	hitbox.rotation = raycast.rotation + PI/2
@@ -101,14 +111,12 @@ func death() -> void:
 	death_effect.set_as_toplevel(true)
 	get_parent().add_child(death_effect)
 	
-	print("---------- PLEAYER DIED ---------- ")
 	end_time = OS.get_ticks_msec()
 	elapsed_time = (end_time - start_time) / 1000
+	Config.play_time = elapsed_time
 	
-	var minutes = elapsed_time / 60
-	var seconds = elapsed_time % 60
-	
-	print("Play time: "  + str(minutes)+ ":" + str(seconds))
+	#show the data and export them
+	GameSumUp.process()
 
 func is_picked(Ability) -> void:
 	PlayerStats.has_pickup = true

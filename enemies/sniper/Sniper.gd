@@ -21,6 +21,9 @@ var shooting_cooldown := 0.0
 
 func _ready() -> void:
 	original_end_position = end.position
+	enemy_type = "Sniper"
+	enemy_score_points = 100
+
 	
 func _physics_process(delta: float) -> void:
 	if get_tree().root.get_node("World/Player").has_node("Default"):
