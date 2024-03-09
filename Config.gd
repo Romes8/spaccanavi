@@ -5,7 +5,7 @@ extends Node
 var score_time = 0
 var score_kills = 0
 var kills = 0
-var waves_cleared = 0
+var wave = 0
 var ID = null
 var play_time = 0
 
@@ -19,5 +19,9 @@ var play_time = 0
 # if kill is selected we focus on kill score
 var game_focus = "time"  
 #var game_focsu = "kill"
+
+
+#Link to Google forms
+var URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdSXJxqawZ_fJFXmQYwuz6VXZxOJgOcagKcPza1I0T9vexWDQ/formResponse"
 
 #score for a new wave is going to be added to both scores
