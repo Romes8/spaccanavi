@@ -84,6 +84,7 @@ WaveManager="*res://autoload/wave_manager/WaveManager.tscn"
 AudioManager="*res://audio/AudioManager.tscn"
 Config="*res://Config.gd"
 GameSumUp="*res://game_sum_up.gd"
+SendData="*res://send_data.gd"
 
 [display]
 

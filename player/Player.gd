@@ -62,6 +62,7 @@ func _process(delta):
 		Config.score_time += 5 * seconds_elapsed  # Add 5 for each elapsed second
 		run_time = current_time - (elapsed_time % 1000)  # Reset the last_time, keeping the remainder
 
+
 func _physics_process(delta):
 	hitbox.rotation = raycast.rotation + PI/2
 	raycast.rotation = lerp_angle(raycast.rotation, get_angle_to(get_global_mouse_position()), spin_thrust * 1/Engine.time_scale)

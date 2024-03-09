@@ -17,8 +17,8 @@ var play_time = 0
 # this decides what game type we launch
 # if time is selected we focus on time score
 # if kill is selected we focus on kill score
-var game_focus = "time"  
-#var game_focsu = "kill"
+#var game_focus = "time"  
+var game_focus = "kill"
 
 
 #Link to Google forms
