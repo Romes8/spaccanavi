@@ -20,8 +20,5 @@ var play_time = 0
 #var game_focus = "time"  
 var game_focus = "kill"
 
-
 #Link to Google forms
-var URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdSXJxqawZ_fJFXmQYwuz6VXZxOJgOcagKcPza1I0T9vexWDQ/formResponse"
-
-#score for a new wave is going to be added to both scores
+var URL = "https://docs.google.com/forms/d/e/1FAIpQLSdSXJxqawZ_fJFXmQYwuz6VXZxOJgOcagKcPza1I0T9vexWDQ/viewform?"
