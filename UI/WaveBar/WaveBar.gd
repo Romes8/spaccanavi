@@ -24,9 +24,9 @@ func _process(delta: float) -> void:
 	wave_bar.value = animated_wave
 	
 	if (Config.game_focus == "time"):
-		score_label.text = str("Time Score: ", Config.score_time) 
+		score_label.text = str("Score: ", Config.score_time) 
 	else: 
-		score_label.text = str("Kill Score: ", Config.score_kills) 
+		score_label.text = str("Score: ", Config.score_kills) 
 
 func update_wave_bar(wave_fill: int) -> void:
 	tween.interpolate_property(self, "animated_wave", animated_wave, wave_fill, 0.25)
