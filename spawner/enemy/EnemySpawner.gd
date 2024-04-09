@@ -6,7 +6,7 @@ const _chaser = Preload.ENEMY.CHASER
 const _triangle = Preload.ENEMY.TRIANGLE
 const _aggressive_chaser = Preload.ENEMY.AGGRESSIVE_CHASER
 const _little_star = Preload.ENEMY.LITTLESTAR
-const _sniper = Preload.ENEMY.SNIPER
+
 
 const enemies = {
 	0: preload(_chaser),
@@ -15,7 +15,6 @@ const enemies = {
 	3: preload(_triangle),
 	4: preload(_aggressive_chaser),
 	5: preload(_little_star),
-	6: preload(_sniper),
 }
 
 func _on_SpawnTimer_timeout() -> void:
