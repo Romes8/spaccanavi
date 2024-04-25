@@ -21,17 +21,19 @@ func Send():
 		"entry.47809509": Config.score_kills,
 		"entry.454224439": Config.score_time,
 		"entry.536978428": Config.kills,
-		"entry.2007878028": Config.wave
+		"entry.2007878028": Config.wave,
+		"entry.117454305": Config.retries
 	}
 	
-	## when play time is over 20 seconds send the data of not than dont send
-	if (Config.play_time > 20):
-		var prefil_data = http.query_string_from_dict(data)
-		var prefill_url = URL + prefil_data
-		yield(get_tree().create_timer(3.0), "timeout")
+	## when play time is over 20 seconds send the data of not than dont sen
+		
+		
+	var prefil_data = http.query_string_from_dict(data)
+	var prefill_url = URL + prefil_data
+	#yield(get_tree().create_timer(3.0), "timeout")  #timer to wait for 3 seconds 
 
-		OS.shell_open(prefill_url)
+	OS.shell_open(prefill_url)
 
-		print("Data sent ... ")
-	else:
-		print("Threshold of 20 seconds not reached. ")
+	print("Data sent ... ")
+	
+	Config.ResetData()

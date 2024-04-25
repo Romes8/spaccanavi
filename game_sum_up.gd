@@ -12,7 +12,10 @@ func process():
 	var timestamp = OS.get_unix_time()
 	randomize()
 	var random_value = randi() % 100 + 100 # Generate a random integer between 100 - 199
-	Config.ID = "uid_" + str(timestamp) + "_" + str(random_value)
+	
+	#generate new UID when its empty
+	if (Config.ID == null):
+		Config.ID = "uid_" + str(timestamp) + "_" + str(random_value)
 	
 	print("")
 	print("-- GAME STATS -- ")
@@ -23,13 +26,13 @@ func process():
 	print("Kill score: " + str(Config.score_kills))
 	print("Kills: " + str(Config.kills))
 	print("Waves: " + str(Config.wave))
+	print("Retries : " + str(Config.retries))
 	print("")
 	
 	#export the data
-	SendData.Send()
+	#SendData.Send()
 
-	
 	#clear the data
-	Config.score_kills = 0
-	Config.score_time = 0 
-	Config.kills = 0
+	#Config.score_kills = 0
+	#Config.score_time = 0 
+	#Config.kills = 0

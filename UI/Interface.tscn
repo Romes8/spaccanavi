@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/HealthBar/HealthBar.gd" type="Script" id=1]
 [ext_resource path="res://UI/HealthBar/HealthBar.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://UI/RetryBtn.gd" type="Script" id=7]
 [ext_resource path="res://UI/Interface.gd" type="Script" id=8]
 [ext_resource path="res://abilities/shield/shield.png" type="Texture" id=9]
+[ext_resource path="res://UI/SendData.gd" type="Script" id=10]
 [ext_resource path="res://UI/Ability/ability_ui_bg.png" type="Texture" id=11]
 [ext_resource path="res://UI/AbilityContainer.gd" type="Script" id=12]
 
@@ -52,11 +53,7 @@ anchor_bottom = 0.0
 margin_left = 480.0
 margin_top = 48.0
 margin_right = 880.0
-margin_bottom = 128.0
-
-[node name="Label" parent="GameUI/WaveHandler" index="0"]
-margin_left = 142.0
-margin_right = 258.0
+margin_bottom = 158.0
 
 [node name="WaveBar" parent="GameUI/WaveHandler" index="1"]
 margin_bottom = 62.0
@@ -64,7 +61,15 @@ margin_bottom = 62.0
 [node name="Score" type="Label" parent="GameUI/WaveHandler"]
 margin_top = 66.0
 margin_right = 400.0
-margin_bottom = 80.0
+margin_bottom = 110.0
+grow_horizontal = 2
+custom_fonts/font = SubResource( 1 )
+text = "Pause"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameUI"]
 margin_left = 375.0
@@ -172,6 +177,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SendData" type="Button" parent="PauseOverlay/Options"]
+margin_right = 296.0
+margin_bottom = 98.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Questionaire"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MenuBtn" parent="PauseOverlay/Options" instance=ExtResource( 5 )]
 margin_top = 102.0
 margin_right = 296.0
@@ -186,5 +202,6 @@ margin_right = 296.0
 margin_bottom = 200.0
 
 [connection signal="button_up" from="PauseOverlay/Options/RetryBtn" to="PauseOverlay/Options/RetryBtn" method="_on_button_up"]
+[connection signal="button_up" from="PauseOverlay/Options/SendData" to="PauseOverlay/Options/SendData" method="_on_button_up"]
 
 [editable path="GameUI/WaveHandler"]
