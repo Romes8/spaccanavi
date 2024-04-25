@@ -36,9 +36,24 @@ text = "SpaccaNavi"
 align = 1
 valign = 1
 uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="GameMode" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -660.0
+margin_top = -171.5
+margin_right = 660.0
+margin_bottom = 801.0
+grow_vertical = 0
+rect_min_size = Vector2( 1320, 87 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "Mode: A"
+align = 1
+valign = 1
+uppercase = true
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -51,9 +66,6 @@ margin_right = 198.0
 margin_bottom = 99.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PlayBtn" parent="Buttons" instance=ExtResource( 2 )]
 margin_bottom = 110.0
