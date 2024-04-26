@@ -19,8 +19,8 @@ var cur_time = 0
 # this decides what game type we launch
 # if time is selected we focus on time score
 # if kill is selected we focus on kill score
-var game_focus = "kill"  
-#var game_focus = "time"
+#var game_focus = "kill"  
+var game_focus = "time"
 var reset = false
 #Link to Google forms
 var URL = "https://docs.google.com/forms/d/e/1FAIpQLSeU8w0HWVNsB7p8nidEaqqICrYkTCKqsVJ_pHxNvhT-LaHd5w/viewform?"
