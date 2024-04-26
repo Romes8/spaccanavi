@@ -10,6 +10,16 @@ func process():
 	
 	#createUnique ID
 	var timestamp = OS.get_unix_time()
+	var datetime = Time.get_datetime_dict_from_unix_time(OS.get_unix_time())
+
+	var formatted_time = String(datetime["year"]) + "-" + \
+						 String(datetime["month"]).pad_zeros(2) + "-" + \
+						 String(datetime["day"]).pad_zeros(2) + " " + \
+						 String(datetime["hour"]).pad_zeros(2) + ":" + \
+						 String(datetime["minute"]).pad_zeros(2) + ":" + \
+						 String(datetime["second"]).pad_zeros(2)
+	Config.cur_time = formatted_time
+	
 	randomize()
 	var random_value = randi() % 100 + 100 # Generate a random integer between 100 - 199
 	
@@ -19,6 +29,7 @@ func process():
 	
 	print("")
 	print("-- GAME STATS -- ")
+	print("Current date and time: ", Config.cur_time)
 	print("ID: ", Config.ID)
 	print("Game focus: ", Config.game_focus)
 	print("Play time: "  + str(minutes)+ ":" + str(seconds))

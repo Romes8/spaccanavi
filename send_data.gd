@@ -16,13 +16,13 @@ func Send():
 	#create the data structure
 	var data = {
 		"entry.775212696": Config.ID,
-		"entry.1734022402": game_focus,
-		"entry.867234986": Config.play_time,
-		"entry.47809509": Config.score_kills,
-		"entry.454224439": Config.score_time,
-		"entry.536978428": Config.kills,
-		"entry.2007878028": Config.wave,
-		"entry.117454305": Config.retries
+		#"entry.1734022402": game_focus,
+		#"entry.867234986": Config.play_time,
+		#"entry.47809509": Config.score_kills,
+		#"entry.454224439": Config.score_time,
+		#"entry.536978428": Config.kills,
+		#"entry.2007878028": Config.wave,
+		#"entry.117454305": Config.retries
 	}
 	
 	## when play time is over 20 seconds send the data of not than dont sen
